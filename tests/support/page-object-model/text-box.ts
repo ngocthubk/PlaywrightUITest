@@ -1,65 +1,65 @@
 import type { Page, Locator } from '@playwright/test';
 import { expect } from '@playwright/test';
 
-// Author: Thu Nguyen
+/* @Author: Thu Nguyen */
 export class TextBox {
 
-      private readonly fullName: Locator;
-      private readonly email: Locator;
-      private readonly curAdd: Locator;
-      private readonly perAdd: Locator;
-      private readonly submit: Locator;
-      private readonly outName: Locator;
-      private readonly outEmail: Locator;
-      private readonly outCurAdd: Locator;
-      private readonly outPerAdd: Locator;
+      private readonly ctrFullName: Locator;
+      private readonly ctrEmail: Locator;
+      private readonly ctrCurAdd: Locator;
+      private readonly ctrPerAdd: Locator;
+      private readonly ctrSubmit: Locator;
+      private readonly ctrOutName: Locator;
+      private readonly ctrOutEmail: Locator;
+      private readonly ctrOutCurAdd: Locator;
+      private readonly ctrOutPerAdd: Locator;
 
     /** Constructor with one parameter 
      * @param page fixture Page
     */
       constructor(public readonly page: Page) {
-        this.fullName = this.page.getByPlaceholder("Full Name");
-        this.email = this.page.getByPlaceholder("name@example.com");
-        this.curAdd = this.page.getByPlaceholder("Current Address");
-        this.perAdd = this.page.locator('#permanentAddress');     
-        this.submit = this.page.getByRole('button',{name: 'Submit'});
-        this.outName = this.page.locator("xpath=//p[@id='name']");
-        this.outEmail = this.page.locator("xpath=//p[@id='email']");
-        this.outCurAdd = this.page.locator("xpath=//p[@id='currentAddress']");
-        this.outPerAdd = this.page.locator("xpath=//p[@id='permanentAddress']");
+        this.ctrFullName = this.page.getByPlaceholder("Full Name");
+        this.ctrEmail = this.page.getByPlaceholder("name@example.com");
+        this.ctrCurAdd = this.page.getByPlaceholder("Current Address");
+        this.ctrPerAdd = this.page.locator('#permanentAddress');     
+        this.ctrSubmit = this.page.getByRole('button',{name: 'Submit'});
+        this.ctrOutName = this.page.locator("xpath=//p[@id='name']");
+        this.ctrOutEmail = this.page.locator("xpath=//p[@id='email']");
+        this.ctrOutCurAdd = this.page.locator("xpath=//p[@id='currentAddress']");
+        this.ctrOutPerAdd = this.page.locator("xpath=//p[@id='permanentAddress']");
     }
 
     /** Input into the text box Full Name 
      * @param name  The full name
     */
     async inputFullName(name: string){
-        await this.fullName.fill(name);
+        await this.ctrFullName.fill(name);
     }
 
     /* Input into the text box Email 
     @param email The email
     */
     async inputEmail(email: string){
-        await this.email.fill(email);
+        await this.ctrEmail.fill(email);
     }
 
     /* Input into the text box Current Address
     @param curAdd The current address of the user
     */
     async inputCurrentAddress(curAdd: string){
-        await this.curAdd.fill(curAdd);
+        await this.ctrCurAdd.fill(curAdd);
     }
 
     /* Input into the text box Permanent Address
     @param perAdd The permanent address of the user
     */
     async inputPermanentAddress(perAdd: string){
-        await this.perAdd.fill(perAdd);
+        await this.ctrPerAdd.fill(perAdd);
     }
 
     /* Click on the button Submit */
     async clickSubmit(){
-        await this.submit.click();
+        await this.ctrSubmit.click();
     }
 
     /* Input into the text boxes
@@ -72,7 +72,7 @@ export class TextBox {
         await this.inputEmail(email);
         await this.inputCurrentAddress(curAdd);
         await this.inputPermanentAddress(perAdd);
-        await this.submit.click();
+        await this.ctrSubmit.click();
         
     }
 
@@ -80,7 +80,7 @@ export class TextBox {
     @param name The name of the user */
     async expectName(name: string){
         if (name.length > 0)
-            await expect(this.outName).toHaveText("Name:" + name);         
+            await expect(this.ctrOutName).toHaveText("Name:" + name);         
         else
             console.log("The Name is empty");
     }
@@ -89,7 +89,7 @@ export class TextBox {
     @param email The email of the user*/
     async expectEmail(email: string){  
         if (email.length > 0)
-            await expect(this.outEmail).toHaveText("Email:" + email);
+            await expect(this.ctrOutEmail).toHaveText("Email:" + email);
         else
             console.log("The Email is empty");
     }
@@ -98,7 +98,7 @@ export class TextBox {
     @param curAdd The current address of the user */
     async expectCurrentAddress(curAdd: string){   
         if  (curAdd.length > 0) 
-            await expect(this.outCurAdd).toHaveText("Current Address :" + curAdd);
+            await expect(this.ctrOutCurAdd).toHaveText("Current Address :" + curAdd);
         else
             console.log("The Current Address is empty");
     }
@@ -107,7 +107,7 @@ export class TextBox {
     @param perAdd The permanent address of the user */
     async expectPermanentAddress(perAdd: string){
         if (perAdd.length > 0)   
-            await expect(this.outPerAdd).toHaveText("Permananet Address :"+ perAdd);
+            await expect(this.ctrOutPerAdd).toHaveText("Permananet Address :"+ perAdd);
         else
             console.log("The Permanent Address is empty");
     }

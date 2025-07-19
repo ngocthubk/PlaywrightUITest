@@ -1,6 +1,7 @@
 import { test, expect, type Page} from '@playwright/test';
 import { TextBox } from '../support/page-object-model/text-box';
 
+/* @Author: Thu Nguyen */
 test.beforeEach(async ({ page }) => {
   await page.goto('https://demoqa.com/text-box');
 });
@@ -16,6 +17,7 @@ test.describe('Input into text boxes',()=> {
         
         let txtBox: TextBox = await new TextBox(page);
         await txtBox.inputTextbox(name, email,curAdd,perAdd);
+        // Verify the result
         await txtBox.expectName(name);
         await txtBox.expectEmail(email);
         await txtBox.expectCurrentAddress(curAdd);
