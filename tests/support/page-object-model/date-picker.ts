@@ -8,7 +8,7 @@ export class DatePicker {
      private readonly ctrYear;
      private readonly ctrMonth;
    
-    /* Constructor of class Slider
+    /* Constructor of class DatePicker
     @param page the fixture Page
     */
      constructor(public readonly page: Page) {
