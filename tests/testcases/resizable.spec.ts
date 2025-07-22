@@ -8,8 +8,7 @@ test.beforeEach(async ({ page }) => {
 
 test.describe('Resize the boxes',()=> {
     [
-        {x: 20, y: 30},
-       
+        {x: 20, y: 30},       
         {x: 300, y: 100},
     ].forEach(({x,y}) => {
     test(`Resize the box in the restriction area in x distance ${x} and y distance ${y}`, async ({page}) => {

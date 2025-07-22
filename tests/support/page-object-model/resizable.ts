@@ -14,7 +14,7 @@ export class Resizable {
      private boxWidth;
      private boxHeight;
 
-    /* Constructor of class Slider
+    /* Constructor of class Resizable
     @param page the fixture Page
     */
      constructor(public readonly page: Page) {
@@ -38,6 +38,7 @@ export class Resizable {
      */
      async resizeBox(locator: Locator, xCrd: number, yCrd: number){
 
+        await locator.hover();
         await locator.dispatchEvent('mousedown');
         await this.page.mouse.move(xCrd, yCrd);
         await locator.dispatchEvent('mouseup')

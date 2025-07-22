@@ -16,7 +16,7 @@ test.describe('Drag the slider',()=> {
         
         let slider: Slider = await new Slider(page);
         await slider.dragSlider(value);
-        // Verify the output show ${value}
+        // Verify if the output show ${value}
         await slider.expectOutput(value)
     })      
 })

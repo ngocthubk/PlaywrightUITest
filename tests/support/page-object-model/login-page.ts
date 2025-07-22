@@ -10,7 +10,7 @@ export class LoginPage {
     private readonly ctrUser;
     private readonly ctrBookStore;
 
-    /* Constructor of class Slider
+    /* Constructor of class LoginPage
     @param page the fixture Page
     */
      constructor(public readonly page: Page) {
