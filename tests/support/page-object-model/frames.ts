@@ -9,7 +9,7 @@ export class Frames {
      private readonly ctrHeading1;
      private readonly ctrHeading2;
 
-    /* Constructor of class Slider
+    /* Constructor of class Frames
     @param page the fixture Page
     */
      constructor(public readonly page: Page) {
