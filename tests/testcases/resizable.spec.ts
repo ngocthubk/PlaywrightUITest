@@ -36,7 +36,3 @@ test.describe('Resize the boxes',()=> {
     });
 
 })
-
-test.afterEach(({ context }) => {
-  console.log('is browser alive? '+context.browser()?.isConnected());
-});
