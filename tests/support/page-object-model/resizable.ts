@@ -38,10 +38,13 @@ export class Resizable {
      */
      async resizeBox(locator: Locator, xCrd: number, yCrd: number){
 
+        locator.scrollIntoViewIfNeeded()
         await locator.hover();
-        await locator.dispatchEvent('mousedown');
+        await locator.focus();
+        await locator.dispatchEvent('mousedown');  
+      //   await locator.dispatchEvent('mousemove', {screenX: xCrd, screenY: yCrd});     
         await this.page.mouse.move(xCrd, yCrd);
-        await locator.dispatchEvent('mouseup')
+        await locator.dispatchEvent('mouseup');
  
      }
 

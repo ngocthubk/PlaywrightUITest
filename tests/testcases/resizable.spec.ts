@@ -22,7 +22,7 @@ test.describe('Resize the boxes',()=> {
     }) ;
     [
         {x: 40, y: 40},
-        {x: 500, y: 500},
+        {x: 400, y: 400},
     ].forEach(({x,y}) => {
     test(`Resize the box below in x distance ${x} and y distance ${y}`, async ({page}) => {
         
