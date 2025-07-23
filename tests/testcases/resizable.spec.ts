@@ -3,6 +3,7 @@ import { Resizable } from '../support/page-object-model/resizable';
 
 /* @Author: Thu Nguyen */
 test.beforeEach(async ({ page }) => {
+  test.slow();
   await page.goto('https://demoqa.com/resizable',{waitUntil: 'load'});
 });
 
