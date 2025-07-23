@@ -3,7 +3,7 @@ import { DatePicker } from '../support/page-object-model/date-picker';
 
 /* @Author: Thu Nguyen */
 test.beforeEach(async ({ page }) => {
-  await page.goto('https://demoqa.com/date-picker');
+  await page.goto('https://demoqa.com/date-picker',{waitUntil: 'load'});
 
 });
 
