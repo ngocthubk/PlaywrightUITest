@@ -3,7 +3,7 @@ import { Frames } from '../support/page-object-model/frames';
 
 /* @Author: Thu Nguyen */
 test.beforeEach(async ({ page }) => {
-  await page.goto('https://demoqa.com/frames');
+  await page.goto('https://demoqa.com/frames',{waitUntil: 'load'});
 });
 
 test(`Check the text in frames`, async ({page}) => {

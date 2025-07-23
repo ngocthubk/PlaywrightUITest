@@ -3,7 +3,7 @@ import { Resizable } from '../support/page-object-model/resizable';
 
 /* @Author: Thu Nguyen */
 test.beforeEach(async ({ page }) => {
-  await page.goto('https://demoqa.com/resizable');
+  await page.goto('https://demoqa.com/resizable',{waitUntil: 'load'});
 });
 
 test.describe('Resize the boxes',()=> {
@@ -22,7 +22,7 @@ test.describe('Resize the boxes',()=> {
     }) ;
     [
         {x: 40, y: 40},
-        {x: 500, y: 500},
+        {x: 400, y: 400},
     ].forEach(({x,y}) => {
     test(`Resize the box below in x distance ${x} and y distance ${y}`, async ({page}) => {
         

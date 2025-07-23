@@ -3,7 +3,7 @@ import { TextBox } from '../support/page-object-model/text-box';
 
 /* @Author: Thu Nguyen */
 test.beforeEach(async ({ page }) => {
-  await page.goto('https://demoqa.com/text-box');
+  await page.goto('https://demoqa.com/text-box',{waitUntil: 'load'});
 });
 
 test.describe('Input into text boxes',()=> {
