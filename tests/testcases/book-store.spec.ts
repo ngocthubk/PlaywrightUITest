@@ -4,7 +4,7 @@ import { test,expect } from '../support/test-fixtures/pages.fixture';
 /* @Author: Thu Nguyen */
 
 test.beforeEach(async ({ loginPage }) => {
-    test.slow();
+    test.setTimeout(60000);
     await loginPage.gotoBookStore();
 });
 test.describe('Search the book store',()=> {
