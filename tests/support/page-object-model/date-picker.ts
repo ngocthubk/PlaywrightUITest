@@ -9,7 +9,7 @@ export class DatePicker {
      private readonly ctrYear;
      private readonly ctrMonth;
    
-    /* Constructor of class DatePicker
+    /** Constructor of class DatePicker
     @param page the fixture Page
     */
      constructor(public readonly page: Page) {
@@ -20,17 +20,15 @@ export class DatePicker {
         this.ctrMonth = this.page.locator('.react-datepicker__month-select');
         
      }
-     /* Enter the date directly in the control Select Date
+     /** Enter the date directly in the control Select Date
      @param date The date value in the format MM/dd/yyyy, e.g. 07/21/2025
      */
      async enterDate(date: string){
          await this.ctrSelectDate.fill('07/21/2025');
 
-     }
+     } 
 
-    
-
-     /* Select date from the date picker
+     /** Select date from the date picker
      @param date The date value in the format MM/dd/yyyy, e.g. 07/21/2025
      */
      async selectDate(date: string){
@@ -46,11 +44,7 @@ export class DatePicker {
          await ctrDate.click();
      }
  
-     async selectDateAndTime(){
-
-     }
-     
-     /* Verify the value in the control Select Date 
+     /** Verify the value in the control Select Date 
      @param date The date value in the format MM/dd/yyyy, e.g. 07/21/2025
      */
      async expectDate(date: string){

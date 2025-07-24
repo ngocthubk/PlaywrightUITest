@@ -36,33 +36,33 @@ export class TextBox {
         await this.ctrFullName.fill(name);
     }
 
-    /* Input into the text box Email 
+    /** Input into the text box Email 
     @param email The email
     */
     async inputEmail(email: string){
         await this.ctrEmail.fill(email);
     }
 
-    /* Input into the text box Current Address
+    /** Input into the text box Current Address
     @param curAdd The current address of the user
     */
     async inputCurrentAddress(curAdd: string){
         await this.ctrCurAdd.fill(curAdd);
     }
 
-    /* Input into the text box Permanent Address
+    /** Input into the text box Permanent Address
     @param perAdd The permanent address of the user
     */
     async inputPermanentAddress(perAdd: string){
         await this.ctrPerAdd.fill(perAdd);
     }
 
-    /* Click on the button Submit */
+    /** Click on the button Submit */
     async clickSubmit(){
         await this.ctrSubmit.click();
     }
 
-    /* Input into the text boxes
+    /** Input into the text boxes
     @param name The full name of the user
     @param email The email of the user
     @param curAdd The current address of the user
@@ -76,7 +76,7 @@ export class TextBox {
         
     }
 
-    /* Check if the name is saved and shown correctly
+    /** Check if the name is saved and shown correctly
     @param name The name of the user */
     async expectName(name: string){
         if (name.length > 0)
@@ -85,7 +85,7 @@ export class TextBox {
             console.log("The Name is empty");
     }
 
-    /* Check if the email is saved and shown correctly 
+    /** Check if the email is saved and shown correctly 
     @param email The email of the user*/
     async expectEmail(email: string){  
         if (email.length > 0)
@@ -94,7 +94,7 @@ export class TextBox {
             console.log("The Email is empty");
     }
 
-    /* Check if the current address is saved and shown correctly
+    /** Check if the current address is saved and shown correctly
     @param curAdd The current address of the user */
     async expectCurrentAddress(curAdd: string){   
         if  (curAdd.length > 0) 
@@ -103,7 +103,7 @@ export class TextBox {
             console.log("The Current Address is empty");
     }
 
-    /* Check if the permanent address is saved and shown correctly
+    /** Check if the permanent address is saved and shown correctly
     @param perAdd The permanent address of the user */
     async expectPermanentAddress(perAdd: string){
         if (perAdd.length > 0)   

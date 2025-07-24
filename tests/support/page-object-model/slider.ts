@@ -7,7 +7,7 @@ export class Slider {
     private readonly ctrSlider;
     private readonly ctrOutput;
 
-    /* Constructor of class Slider
+    /** Constructor of class Slider
     @param page the fixture Page
     */
     constructor(public readonly page: Page) {
@@ -16,7 +16,7 @@ export class Slider {
 
     }
 
-    /* Drag the slider
+    /** Drag the slider
     @param value The value, to which the slider is dragged
      */
     async dragSlider(value: number){
@@ -24,7 +24,7 @@ export class Slider {
         await this.ctrSlider.fill(value.toString());
     }
 
-    /* Check if the output shows the value of the slider correctly
+    /** Check if the output shows the value of the slider correctly
     @param value The value, which the output should show
     */
     async expectOutput(value: number){
