@@ -4,7 +4,7 @@ import { expect } from '@playwright/test';
 /* @Author: Thu Nguyen */
 export class LoginPage {
 
-    private readonly ctrUseName;
+    private readonly ctrUserName;
     private readonly ctrPassword;
     private readonly ctrLogin;
     private readonly ctrUser;
@@ -15,7 +15,7 @@ export class LoginPage {
     */
      constructor(public readonly page: Page) {
         
-        this.ctrUseName = this.page.getByPlaceholder('UserName');
+        this.ctrUserName = this.page.getByPlaceholder('UserName');
         this.ctrPassword = this.page.getByPlaceholder('Password');
         this.ctrLogin = this.page.getByRole('button',{name: 'Login'});
         this.ctrUser = this.page.getByRole('button',{name: 'New User'});
@@ -24,7 +24,7 @@ export class LoginPage {
 
      /** Open the page login */
      async goto(){
-        await this.page.goto('https://demoqa.com/login',{waitUntil: 'load'});
+        await this.page.goto('https://demoqa.com/login',{waitUntil: 'domcontentloaded'});
 
      }
 
@@ -39,7 +39,7 @@ export class LoginPage {
       */
      async login(username: string, password: string){
 
-        await this.ctrUseName.fill(username);
+        await this.ctrUserName.fill(username);
         await this.ctrPassword.fill(password);
         await this.ctrLogin.click();
 
