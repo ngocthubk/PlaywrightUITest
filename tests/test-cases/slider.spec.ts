@@ -4,7 +4,7 @@ import { Slider } from '../support/page-object-model/slider';
 /* @Author: Thu Nguyen */
 test.beforeEach(async ({ page }) => {
     test.slow();
-    await page.goto('https://demoqa.com/slider',{waitUntil: 'load'});
+    await page.goto('https://demoqa.com/slider',{waitUntil: 'domcontentloaded'});
 });
 
 test.describe('Drag the slider',()=> {

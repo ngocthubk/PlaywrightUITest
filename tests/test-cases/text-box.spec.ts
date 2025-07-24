@@ -4,7 +4,7 @@ import { TextBox } from '../support/page-object-model/text-box';
 /* @Author: Thu Nguyen */
 test.beforeEach(async ({ page }) => {
     test.slow();
-    await page.goto('https://demoqa.com/text-box',{waitUntil: 'load'});
+    await page.goto('https://demoqa.com/text-box',{waitUntil: 'domcontentloaded'});
 });
 
 test.describe('Input into text boxes',()=> {

@@ -4,7 +4,7 @@ import { Frames } from '../support/page-object-model/frames';
 /* @Author: Thu Nguyen */
 test.beforeEach(async ({ page }) => {
   test.slow();
-  await page.goto('https://demoqa.com/frames',{waitUntil: 'load'});
+  await page.goto('https://demoqa.com/frames',{waitUntil: 'domcontentloaded'});
 });
 
 test(`Check the text in frames`, async ({page}) => {
