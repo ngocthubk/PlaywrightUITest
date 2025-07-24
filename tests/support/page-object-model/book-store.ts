@@ -10,7 +10,7 @@ export class BookStore {
     private readonly ctrBookItem;
     private readonly ctrBookStore;
 
-    /* Constructor of class Bookstore
+    /** Constructor of class Bookstore
     @param page the fixture Page
     */
      constructor(public readonly page: Page) {
@@ -22,12 +22,12 @@ export class BookStore {
         
      }
 
-     /* Open the page Bookstore */
+     /** Open the page Bookstore */
      async goto(){
          await  this.page.goto('https://demoqa.com/books');
      }
    
-     /* Input into the search box
+     /** Input into the search box
      @param text The search keyword
       */
      async inputSearch(text: string){
@@ -35,12 +35,12 @@ export class BookStore {
         await this.ctrSearchButton.click();
      }
 
-     /* Logout */
+     /** Logout */
      async logout(){
         await this.ctrLogout.click();
      }
 
-     /* Check the search result 
+     /** Check the search result 
      @param text The search keyword
      @param amount The number of the books
      */

@@ -14,7 +14,7 @@ export class Resizable {
      private boxWidth;
      private boxHeight;
 
-    /* Constructor of class Resizable
+    /** Constructor of class Resizable
     @param page the fixture Page
     */
      constructor(public readonly page: Page) {
@@ -31,7 +31,7 @@ export class Resizable {
         
      }
 
-     /* Resize a box to a size that is x and y bigger or smaller  in the width and height respectively
+     /** Resize a box to a size that is x and y bigger or smaller  in the width and height respectively
      @param locator The locator of the resizable handle area, which should be dragged, in the box 
      @param xCrd distance in x coordinate 
      @param yCrd distance in y coordinate
@@ -48,7 +48,7 @@ export class Resizable {
  
      }
 
-     /* Resize the Box in the restriction area (the 1st. box) 
+     /** Resize the Box in the restriction area (the 1st. box) 
         @param xCrd distance in x coordinate 
         @param yCrd distance in y coordinate
      */
@@ -61,7 +61,7 @@ export class Resizable {
         await this.resizeBox(this.ctrRszAreaRst,xCrd, yCrd);
      }
 
-     /* Resize the Box below (the 2nd. box) 
+     /** Resize the Box below (the 2nd. box) 
         @param xCrd distance in x coordinate 
         @param yCrd distance in y coordinate
      */
@@ -74,7 +74,7 @@ export class Resizable {
         await this.resizeBox(this.ctrRszArea, xCrd, yCrd);
      }
 
-     /* Verify if the new size of a box corresponds to the resizing parameters
+     /** Verify if the new size of a box corresponds to the resizing parameters
      @param oldWidth The old width of the box
      @param oldHeight The old height of the box
      @param newWidth The new width of the box
@@ -91,7 +91,7 @@ export class Resizable {
         await expect(diffHeight).toBe(yCrd);
      }
 
-     /* Verify if the new size of the box in the restriction area (1st. box) corresponds to the resizing parameters
+     /** Verify if the new size of the box in the restriction area (1st. box) corresponds to the resizing parameters
      @param xCrd distance in x coordinate
      @param yCrd distance in y coordinate
      */
@@ -104,7 +104,7 @@ export class Resizable {
         await this.expectResizing(this.boxRstWidth, this.boxRstHeight,width, height, xCrd, yCrd);
      }
 
-     /* Verify if the new size of the box below (2nd. box) corresponds to the resizing parameters
+     /** Verify if the new size of the box below (2nd. box) corresponds to the resizing parameters
      @param xCrd distance in x coordinate
      @param yCrd distance in y coordinate
      */

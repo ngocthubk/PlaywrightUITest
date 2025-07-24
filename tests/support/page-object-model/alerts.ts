@@ -8,7 +8,7 @@ export class Alerts {
       private readonly ctrConfirmResult: Locator;
       private readonly ctrPromptResult: Locator;
 
-    /** Constructor with one parameter 
+    /** Constructor of the class Alerts
      * @param page fixture Page
     */
       constructor(public readonly page: Page) {
@@ -19,6 +19,9 @@ export class Alerts {
        
     }
 
+    /** Confirm the confirmation alert 
+    * @param action The value of OK or Cancel
+    * */
     async confirmAction(action: string){
 
         this.page.on('dialog', async dialog => {
@@ -31,6 +34,10 @@ export class Alerts {
         await this.ctrClickMeConfirm.click();
     }
 
+    /** Prompt the alert
+    * @param action  The value of OK or Cancel
+    * @param text The text to input on the alert
+    */
     async promptAction(action: string,text: string){
 
         
@@ -45,6 +52,9 @@ export class Alerts {
         await this.ctrClickMePrompt.click();
     }
 
+    /** Check the effect of the confirming action on the confirmation alert
+    * @param action The value of OK or Cancel
+    */
     async expectConfirmation(action: string){
         if (action === "OK")
             await expect(this.ctrConfirmResult).toHaveText("You selected Ok");
@@ -52,11 +62,15 @@ export class Alerts {
             await expect(this.ctrConfirmResult).toHaveText("You selected Cancel");
     }
 
+    /** Check the effect of the action on the prompt alert 
+    * @param action  The value of OK or Cancel
+    * @param text The text to input on the alert
+    */
     async expectPrompt(action: string,text: string){
         if (action === "OK")
-            await expect(this.ctrConfirmResult).toHaveText("You entered " + text);
+            await expect(this.ctrPromptResult).toHaveText("You entered " + text);
         else
-            await expect(await this.ctrConfirmResult.count()).toEqual(0);
+            await expect(await this.ctrPromptResult.count()).toEqual(0);
     }
     
 }

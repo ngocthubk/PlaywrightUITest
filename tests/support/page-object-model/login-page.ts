@@ -10,7 +10,7 @@ export class LoginPage {
     private readonly ctrUser;
     private readonly ctrBookStore;
 
-    /* Constructor of class LoginPage
+    /** Constructor of class LoginPage
     @param page the fixture Page
     */
      constructor(public readonly page: Page) {
@@ -22,18 +22,18 @@ export class LoginPage {
         this.ctrBookStore = this.page.getByRole('button',{name:'Go To Book Store'});
      }
 
-     /* Open the page login */
+     /** Open the page login */
      async goto(){
         await this.page.goto('https://demoqa.com/login',{waitUntil: 'load'});
 
      }
 
-     /* Open the page Book Store */
+     /** Open the page Book Store */
      async gotoBookStore(){
          await  this.ctrBookStore.click();
      }
 
-     /* Login
+     /** Login
      @param username Username
      @param password Password
       */
@@ -43,8 +43,5 @@ export class LoginPage {
         await this.ctrPassword.fill(password);
         await this.ctrLogin.click();
 
-     }
-
-     
-
+     }     
 }

@@ -8,7 +8,7 @@ test.beforeEach(async ({ page }) => {
 
 });
 
-test.describe('Input Date',()=> {
+test.describe('Interact with alerts',()=> {
     [
         {action: "OK"},
         {action: "Cancel"},        
@@ -22,7 +22,6 @@ test.describe('Input Date',()=> {
     })      
 });
 
-
   [
         {action: "OK", text: "Hello"},
         {action: "Cancel", text: ""},        
@@ -30,9 +29,9 @@ test.describe('Input Date',()=> {
     test(`Input ${text} into the prompt alert then click ${action}`, async ({page}) => {
         
         let alert: Alerts = await new Alerts(page);
-        await alert.confirmAction(action);
-        // Verify if confirm action takes effect
-        await alert.expectConfirmation(action);
+        await alert.promptAction(action,text);
+        // Verify if prompt action takes effect
+        await alert.expectPrompt(action,text);
     })      
 })
 })
