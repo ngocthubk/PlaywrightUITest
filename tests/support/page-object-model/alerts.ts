@@ -24,32 +24,36 @@ export class Alerts {
     * */
     async confirmAction(action: string){
 
-        this.page.on('dialog', async dialog => {
-        console.log(dialog.message());
-        if (action === "OK")
-            await dialog.accept();
-        else
-            await dialog.dismiss();
-        });
-        await this.ctrClickMeConfirm.click();
+        await this.interactAlert(this.ctrClickMeConfirm,action);
+    }
+
+    /** Confirm the confirmation alert 
+    * @param action The value of OK or Cancel
+    * */
+    async promptAction(action: string, text: string){
+
+        await this.interactAlert(this.ctrClickMePrompt,action,text);
     }
 
     /** Prompt the alert
     * @param action  The value of OK or Cancel
     * @param text The text to input on the alert
     */
-    async promptAction(action: string,text: string){
+    async interactAlert(locator:Locator,action: string,text?: string){
 
         
         this.page.on('dialog', async dialog => {
-        console.log(dialog.message() + " test dialog ");
+        console.log(dialog.message());
         if (action === "OK")
-            await dialog.accept(text);
+            if (text == undefined)
+                await dialog.accept();
+            else                 
+                await dialog.accept(text);
         else
             await dialog.dismiss();
         })
 
-        await this.ctrClickMePrompt.click();
+        await locator.click();
     }
 
     /** Check the effect of the confirming action on the confirmation alert
