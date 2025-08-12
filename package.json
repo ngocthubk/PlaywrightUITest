@@ -14,5 +14,9 @@
     "eslint": "^9.31.0",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.37.0"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.1",
+    "dotenv-cli": "^10.0.0"
   }
 }

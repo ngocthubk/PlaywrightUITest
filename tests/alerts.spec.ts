@@ -1,5 +1,5 @@
 import { test, expect, type Page} from '@playwright/test';
-import { Alerts } from '../support/page-object-model/alerts';
+import { Alerts } from '../helpers/page-object-model/alerts';
 
 /* @Author: Thu Nguyen */
 test.beforeEach(async ({ page }) => {

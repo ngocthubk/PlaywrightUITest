@@ -1,5 +1,5 @@
 import { test, expect, type Page} from '@playwright/test';
-import { Slider } from '../support/page-object-model/slider';
+import { Slider } from '../helpers/page-object-model/slider';
 
 /* @Author: Thu Nguyen */
 test.beforeEach(async ({ page }) => {

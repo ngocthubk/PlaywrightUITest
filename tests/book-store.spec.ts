@@ -1,4 +1,4 @@
-import { test,expect } from '../support/test-fixtures/pages.fixture';
+import { test,expect } from '../helpers/test-fixtures/pages.fixture';
 
 
 /* @Author: Thu Nguyen */

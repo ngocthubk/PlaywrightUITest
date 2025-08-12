@@ -1,5 +1,5 @@
 import { test, expect, type Page} from '@playwright/test';
-import { Frames } from '../support/page-object-model/frames';
+import { Frames } from '../helpers/page-object-model/frames';
 
 /* @Author: Thu Nguyen */
 test.beforeEach(async ({ page }) => {

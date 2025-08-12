@@ -1,5 +1,5 @@
 import { test, expect, type Page} from '@playwright/test';
-import { Resizable } from '../support/page-object-model/resizable';
+import { Resizable } from '../helpers/page-object-model/resizable';
 
 /* @Author: Thu Nguyen */
 test.beforeEach(async ({ page }) => {
