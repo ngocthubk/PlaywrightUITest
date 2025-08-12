@@ -42,9 +42,10 @@ export class Resizable {
         await locator.hover();
         await locator.focus();
         await locator.dispatchEvent('mousedown');  
-        await this.page.mouse.down();        
+           
         await this.page.mouse.move(xCrd, yCrd);
         await locator.dispatchEvent('mouseup');
+      
  
      }
 
