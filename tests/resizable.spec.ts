@@ -1,11 +1,12 @@
 import { test, expect, type Page} from '@playwright/test';
-import { Resizable } from '../support/page-object-model/resizable';
+import { Resizable } from '../helpers/page-object-model/resizable';
 
 /* @Author: Thu Nguyen */
 test.beforeEach(async ({ page }) => {
   test.slow();
-  await page.goto('https://demoqa.com/resizable',{waitUntil: 'domcontentloaded'});
+  await page.goto('resizable',{waitUntil: 'domcontentloaded'});
 });
+
 
 test.describe('Resize the boxes',()=> {
     [
@@ -34,5 +35,5 @@ test.describe('Resize the boxes',()=> {
         await resizable.expectResizingWithoutRestriction(x,y);
     })
     });
-
 })
+/* No teardown is necessary */

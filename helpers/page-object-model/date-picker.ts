@@ -1,5 +1,5 @@
 import type { Page, Locator } from '@playwright/test';
-import { expect } from '@playwright/test';
+import { expect,test } from '@playwright/test';
 import { DateFormat } from '../common/dateFormat';
 
 export class DatePicker {
@@ -36,12 +36,22 @@ export class DatePicker {
         var arrDate = dateFormat.processDate(date);         
         var fullDate = dateFormat.convertDate(date);
         var ctrDate: Locator;
-         await this.ctrSelectDate.click();
-         await this.ctrYear.selectOption(arrDate[2]);
-         await this.ctrMonth.selectOption(arrDate[1]);
-         ctrDate = await this.page.locator('xpath=//*[contains(@aria-label,"' + fullDate +'")]');
-         await ctrDate.hover();
-         await ctrDate.click();
+        await test.step('Open the date picker with the right month and year', async()=>{
+            await this.ctrSelectDate.click();
+        })  
+
+        await test.step('Select the year', async()=>{
+            await this.ctrYear.selectOption(arrDate[2]);            
+        })
+
+        await test.step('Select the month', async()=>{
+            await this.ctrMonth.selectOption(arrDate[1]);
+         })
+            
+        await test.step('Click on the date', async()=>{ ctrDate = await this.page.locator('xpath=//*[contains(@aria-label,"' + fullDate +'")]');
+            await ctrDate.hover();
+            await ctrDate.click();
+        })
      }
  
      /** Verify the value in the control Select Date 

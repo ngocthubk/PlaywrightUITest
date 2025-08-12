@@ -1,12 +1,13 @@
 import { test, expect, type Page} from '@playwright/test';
-import { Alerts } from '../support/page-object-model/alerts';
+import { Alerts } from '../helpers/page-object-model/alerts';
 
 /* @Author: Thu Nguyen */
 test.beforeEach(async ({ page }) => {
     test.slow();
-    await page.goto('https://demoqa.com/alerts',{waitUntil: 'domcontentloaded'});
+    await page.goto('alerts',{waitUntil: 'domcontentloaded'});
 
 });
+
 
 test.describe('Interact with alerts',()=> {
     [
@@ -35,3 +36,4 @@ test.describe('Interact with alerts',()=> {
     })      
 })
 })
+/* No teardown is necessary */

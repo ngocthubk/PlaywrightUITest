@@ -1,4 +1,4 @@
-import { test,expect } from '../support/test-fixtures/pages.fixture';
+import { test,expect } from '../helpers/test-fixtures/pages.fixture';
 
 
 /* @Author: Thu Nguyen */
@@ -7,6 +7,8 @@ test.beforeEach(async ({ loginPage }) => {
     test.slow();
     await loginPage.gotoBookStore();
 });
+
+
 test.describe('Search the book store',()=> {
 [
         {text: 'git', amount: 1},      
@@ -21,5 +23,5 @@ test(`Search for ${amount} book(s) containing ${text}`, async ({bookStore,page})
         await bookStore.expectSearchResult(text,amount);
     })
 })
-
 })
+/* No teardown is necessary */

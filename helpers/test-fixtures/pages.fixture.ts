@@ -13,7 +13,7 @@ export const test = base.extend<PagesFixtures>({
     loginPage: async ({page},use) => {
         const loginPage = new LoginPage(page);
         await loginPage.goto();
-        await loginPage.login('thu','Th@123456');
+        await loginPage.login(process.env.username!,process.env.password!);
         // To wait for logging in successfully  
         await page.getByRole('button',{name: 'Log out'}).hover();
         await use(loginPage);

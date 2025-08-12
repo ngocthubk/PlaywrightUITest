@@ -1,11 +1,12 @@
 import { test, expect, type Page} from '@playwright/test';
-import { TextBox } from '../support/page-object-model/text-box';
+import { TextBox } from '../helpers/page-object-model/text-box';
 
 /* @Author: Thu Nguyen */
 test.beforeEach(async ({ page }) => {
     test.slow();
-    await page.goto('https://demoqa.com/text-box',{waitUntil: 'domcontentloaded'});
+    await page.goto('text-box',{waitUntil: 'domcontentloaded'});
 });
+
 
 test.describe('Input into text boxes',()=> {
     [
@@ -22,7 +23,9 @@ test.describe('Input into text boxes',()=> {
         await txtBox.expectName(name);
         await txtBox.expectEmail(email);
         await txtBox.expectCurrentAddress(curAdd);
-        await txtBox.expectPermanentAddress(perAdd);
+        await txtBox.expectPermanentAddress(perAdd);        
+        
     })      
 })
 })
+/* Teardown is unnecessary and impossible */
