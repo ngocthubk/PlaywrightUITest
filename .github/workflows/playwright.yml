@@ -18,9 +18,9 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Install dotenv-cli
-      run:  npm i dotenv-cli
+      run:  npm i -g dotenv-cli
     - name: Run Playwright tests
-      run: dotenv -v username=${{secrets.username}} -v password=${{secrets.password}} -- npx playwright test
+      run: dotenv -e .env.sample -v username=${{secrets.username}} -v password=${{secrets.password}} -- npx playwright test
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
