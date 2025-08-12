@@ -1,5 +1,5 @@
 import type { Page, Locator } from '@playwright/test';
-import { expect } from '@playwright/test';
+import { expect,test } from '@playwright/test';
 
 /* @Author: Thu Nguyen */
 export class TextBox {
@@ -68,11 +68,15 @@ export class TextBox {
     @param curAdd The current address of the user
     @param perAdd The permanent address of the user */
     async inputTextbox(name: string, email: string, curAdd: string, perAdd: string){
-        await this.inputFullName(name);
-        await this.inputEmail(email);
-        await this.inputCurrentAddress(curAdd);
-        await this.inputPermanentAddress(perAdd);
-        await this.ctrSubmit.click();
+        await test.step('Input data into the text boxes', async()=>{
+            await this.inputFullName(name);
+            await this.inputEmail(email);
+            await this.inputCurrentAddress(curAdd);
+            await this.inputPermanentAddress(perAdd);
+        })
+        await test.step('Click on the button Submit', async()=>{ 
+            await this.ctrSubmit.click();
+        })
         
     }
 

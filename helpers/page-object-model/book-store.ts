@@ -31,8 +31,12 @@ export class BookStore {
      @param text The search keyword
       */
      async inputSearch(text: string){
-        await this.ctrSearchBox.fill(text);
-        await this.ctrSearchButton.click();
+         await test.step('Input into the Search box', async()=>{
+            await this.ctrSearchBox.fill(text); 
+         }) 
+         await test.step('Click on the Search button', async()=>{
+            await this.ctrSearchButton.click();
+         })
      }
 
      /** Logout */

@@ -24,7 +24,7 @@ export class LoginPage {
 
      /** Open the page login */
      async goto(){
-        await this.page.goto('https://demoqa.com/login',{waitUntil: 'domcontentloaded'});
+        await this.page.goto('login',{waitUntil: 'domcontentloaded'});
 
      }
 

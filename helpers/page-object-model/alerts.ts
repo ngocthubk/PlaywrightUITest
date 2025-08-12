@@ -40,7 +40,6 @@ export class Alerts {
     * @param text The text to input on the alert
     */
     async interactAlert(locator:Locator,action: string,text?: string){
-
         
         this.page.on('dialog', async dialog => {
         console.log(dialog.message());

@@ -4,7 +4,7 @@ import { Slider } from '../helpers/page-object-model/slider';
 /* @Author: Thu Nguyen */
 test.beforeEach(async ({ page }) => {
     test.slow();
-    await page.goto('https://demoqa.com/slider',{waitUntil: 'domcontentloaded'});
+    await page.goto('slider',{waitUntil: 'domcontentloaded'});
 });
 
 test.describe('Drag the slider',()=> {
@@ -22,3 +22,4 @@ test.describe('Drag the slider',()=> {
     })      
 })
 })
+/* No teardown is necessary  */
