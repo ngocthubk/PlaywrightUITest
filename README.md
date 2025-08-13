@@ -22,7 +22,7 @@ Email: ngocthubk@gmail.com
 ### How to run the test locally:
 1. Clone the project to the local machine
 2. Copy the file .env.sample to .env.local
-3. Open the file .env.local, replace the values #InputYourUsername# and #InputYourPassword# with your username and password respectively on DemoQA
+3. Open the file .env.local, replace the values #InputYourUsername# and #InputYourPassword# with your username and password on DemoQA respectively 
 4. Run the test with the standard command: npx playwright test
 
 
