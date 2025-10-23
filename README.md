@@ -10,12 +10,6 @@
 
 ### Test data
 The tests are parameterized. Therefore the test data is embedded in the test suites.
- ### Author:
-<p> Name: Thu Nguyen
-</p>
-<p>
-Email: ngocthubk@gmail.com
-</p>
 
 ### How to view the test result in Github 
 1. Go to the tab Actions,
@@ -28,4 +22,9 @@ Email: ngocthubk@gmail.com
 3. Open the file .env.local, replace the values #InputYourUsername# and #InputYourPassword# with your username and password on DemoQA respectively 
 4. Run the test with the standard command: npx playwright test
 
-
+ ### Author:
+<p> Name: Thu Nguyen
+</p>
+<p>
+Email: ngocthubk@gmail.com
+</p>
